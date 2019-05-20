@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rOz-iu-z2l">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="showMyLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Px7-gg-548"/>
+                        <viewControllerLayoutGuide type="bottom" id="rP8-cW-LVS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bF-se-YGw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="PAB-rY-muY"/>
+                                    <outletCollection property="gestureRecognizers" destination="iqI-sV-Qbf" appends="YES" id="mal-mG-XZN"/>
+                                </connections>
+                            </mapView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iO-nL-pqq">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgz-Sc-rve">
+                                        <rect key="frame" x="26" y="21" width="114" height="39"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="mgz-Sc-rve" secondAttribute="bottom" constant="20" id="ZKR-WM-UHB"/>
+                                    <constraint firstItem="mgz-Sc-rve" firstAttribute="top" secondItem="1iO-nL-pqq" secondAttribute="top" constant="21" id="ZlZ-4n-KYd"/>
+                                    <constraint firstItem="mgz-Sc-rve" firstAttribute="leading" secondItem="1iO-nL-pqq" secondAttribute="leading" constant="26" id="rbZ-80-OeU"/>
+                                    <constraint firstAttribute="height" constant="80" id="viJ-Dx-VpA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3bF-se-YGw" secondAttribute="trailing" id="2tI-HZ-yqi"/>
+                            <constraint firstAttribute="trailing" secondItem="1iO-nL-pqq" secondAttribute="trailing" id="Ewo-J8-TH9"/>
+                            <constraint firstItem="1iO-nL-pqq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HEg-NJ-V5Q"/>
+                            <constraint firstItem="rP8-cW-LVS" firstAttribute="top" secondItem="1iO-nL-pqq" secondAttribute="bottom" id="Nf9-ce-sJp"/>
+                            <constraint firstItem="rP8-cW-LVS" firstAttribute="top" secondItem="3bF-se-YGw" secondAttribute="bottom" id="Vt7-p8-QGO"/>
+                            <constraint firstItem="3bF-se-YGw" firstAttribute="top" secondItem="Px7-gg-548" secondAttribute="bottom" id="jJP-1f-alg"/>
+                            <constraint firstItem="3bF-se-YGw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="n5n-sy-IYI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lq0-zN-IKk"/>
+                    <connections>
+                        <outlet property="distanceLabel" destination="mgz-Sc-rve" id="FLT-oU-uAZ"/>
+                        <outlet property="map" destination="3bF-se-YGw" id="gsx-ss-GDp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="iqI-sV-Qbf">
+                    <connections>
+                        <action selector="addPin:" destination="BYZ-38-t0r" id="fQq-c7-Y5A"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2697" y="-307"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="skh-fG-OJt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rOz-iu-z2l" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iNc-DA-i1q">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tWi-TI-NvV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLQ-7L-Jy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="-307"/>
+        </scene>
+    </scenes>
+</document>
